@@ -1,12 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<h1>
-Welcome to MITS
-</h1>
+    <div class="container">
+        <div class="task-manager">
+            <h1>Task Manager</h1>
+            <p class="description">Stay organized and productive by managing your daily tasks efficiently</p>
+            
+            <!-- Input Section -->
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="task-input" 
+                    placeholder="Enter a new task..."
+                    autocomplete="off"
+                >
+                <button id="addBtn" class="add-btn">Add Task</button>
+            </div>
+            
+            <!-- Task List Section -->
+            <div class="task-list-section">
+                <h2>Your Tasks</h2>
+                <ul id="taskList" class="task-list">
+                    <!-- Tasks will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
 </body>
 </html>
