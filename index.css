@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.task-manager {
+    background: #2d2d2d;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border: 1px solid #444444;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.description {
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #444444;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.task-input::placeholder {
+    color: #888888;
+}
+
+.add-btn {
+    padding: 12px 25px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #555555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+/* Task List Section */
+.task-list-section {
+    border-top: 2px solid #444444;
+    padding-top: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #3a3a3a;
+    border-left: 4px solid #ffffff;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: slideInTask 0.3s ease-out;
+}
+
+.task-item:hover {
+    background-color: #454545;
+    transform: translateX(5px);
+}
+
+.task-item.completed {
+    background-color: #404040;
+    border-left-color: #666666;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.task-text {
+    flex: 1;
+    color: #ffffff;
+    font-size: 1.05rem;
+    word-break: break-word;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.complete-btn,
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.complete-btn {
+    background: linear-gradient(135deg, #666666 0%, #888888 100%);
+    color: white;
+}
+
+.complete-btn:hover {
+    background: linear-gradient(135deg, #777777 0%, #999999 100%);
+    transform: scale(1.05);
+}
+
+.complete-btn.undo {
+    background: linear-gradient(135deg, #999999 0%, #bbbbbb 100%);
+}
+
+.complete-btn.undo:hover {
+    background: linear-gradient(135deg, #aaaaaa 0%, #cccccc 100%);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #333333 0%, #555555 100%);
+    color: white;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #444444 0%, #666666 100%);
+    transform: scale(1.05);
+}
+
+.empty-message {
+    text-align: center;
+    color: #888888;
+    padding: 40px 20px;
+    font-size: 1.1rem;
+}
+
+/* Animation for task items */
+@keyframes slideInTask {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutTask {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
